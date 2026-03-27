@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 7%;
+    --foreground: 210 20% 92%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 160 70% 45%;
+    --primary-foreground: 220 20% 7%;
+
+    --secondary: 220 16% 16%;
+    --secondary-foreground: 210 20% 85%;
+
+    --muted: 220 14% 14%;
+    --muted-foreground: 215 12% 55%;
+
+    --accent: 220 16% 18%;
+    --accent-foreground: 210 20% 92%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 14% 18%;
+    --input: 220 14% 18%;
+    --ring: 160 70% 45%;
+
+    --radius: 0.75rem;
+
+    /* Emotion colors */
+    --emotion-joy: 142 60% 50%;
+    --emotion-anger: 0 75% 55%;
+    --emotion-sadness: 220 70% 55%;
+    --emotion-fear: 270 55% 55%;
+    --emotion-surprise: 45 90% 55%;
+    --emotion-neutral: 215 12% 55%;
+    --emotion-frustration: 25 85% 55%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(160 70% 45%), hsl(180 65% 40%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 20% 7%), hsl(220 25% 12%));
+    --gradient-card: linear-gradient(145deg, hsl(220 18% 11%), hsl(220 18% 9%));
+    --gradient-glow: radial-gradient(ellipse at center, hsl(160 70% 45% / 0.08), transparent 70%);
+
+    /* Shadows */
+    --shadow-glow: 0 0 30px hsl(160 70% 45% / 0.15);
+    --shadow-card: 0 4px 24px hsl(220 30% 3% / 0.5);
+
+    --sidebar-background: 220 20% 6%;
+    --sidebar-foreground: 210 20% 75%;
+    --sidebar-primary: 160 70% 45%;
+    --sidebar-primary-foreground: 220 20% 7%;
+    --sidebar-accent: 220 16% 12%;
+    --sidebar-accent-foreground: 210 20% 92%;
+    --sidebar-border: 220 14% 14%;
+    --sidebar-ring: 160 70% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .emotion-badge-joy { @apply bg-[hsl(var(--emotion-joy)/0.15)] text-[hsl(var(--emotion-joy))] border-[hsl(var(--emotion-joy)/0.3)]; }
+  .emotion-badge-anger { @apply bg-[hsl(var(--emotion-anger)/0.15)] text-[hsl(var(--emotion-anger))] border-[hsl(var(--emotion-anger)/0.3)]; }
+  .emotion-badge-sadness { @apply bg-[hsl(var(--emotion-sadness)/0.15)] text-[hsl(var(--emotion-sadness))] border-[hsl(var(--emotion-sadness)/0.3)]; }
+  .emotion-badge-fear { @apply bg-[hsl(var(--emotion-fear)/0.15)] text-[hsl(var(--emotion-fear))] border-[hsl(var(--emotion-fear)/0.3)]; }
+  .emotion-badge-surprise { @apply bg-[hsl(var(--emotion-surprise)/0.15)] text-[hsl(var(--emotion-surprise))] border-[hsl(var(--emotion-surprise)/0.3)]; }
+  .emotion-badge-neutral { @apply bg-[hsl(var(--emotion-neutral)/0.15)] text-[hsl(var(--emotion-neutral))] border-[hsl(var(--emotion-neutral)/0.3)]; }
+  .emotion-badge-frustration { @apply bg-[hsl(var(--emotion-frustration)/0.15)] text-[hsl(var(--emotion-frustration))] border-[hsl(var(--emotion-frustration)/0.3)]; }
+
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50 rounded-xl;
+    box-shadow: var(--shadow-card);
+  }
+
+  .glow-border {
+    @apply border border-primary/20;
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: hsl(var(--muted)); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--muted-foreground)); }
