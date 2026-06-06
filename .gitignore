@@ -1,0 +1,39 @@
+# Node
+node_modules/
+dist/
+build/
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Model checkpoints
+*.pt
+*.pth
+*.bin
+
+# HuggingFace cache
+.cache/
+
+# Large model folders
+backend/models/bert-emotion/
+backend/models/bart-response/
